@@ -8,7 +8,7 @@ def normalization(norm, channels):
     elif norm == 'ln':
         norm_ = nn.GroupNorm(channels, channels)
     elif norm == 'gn':
-        norm_ = nn.GroupNorm(channels, 4)
+        norm_ = nn.GroupNorm(4, channels)
     return norm_
 
 # dropout 
