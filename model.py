@@ -6,7 +6,7 @@ def normalization(norm, channels):
     if norm == 'bn':
         norm_ = nn.BatchNorm2d(norm, channels)
     elif norm == 'ln':
-        norm_ = nn.GroupNorm(channels, channels)
+        norm_ = nn.GroupNorm(1, channels)
     elif norm == 'gn':
         norm_ = nn.GroupNorm(4, channels)
     return norm_
