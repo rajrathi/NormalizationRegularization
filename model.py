@@ -4,11 +4,11 @@ import torch.nn.functional as F
 
 def normalization(norm, channels):
     if norm == 'bn':
-        norm_ = nn.BatchNorm2d(norm, channels)
+        norm_ = nn.BatchNorm2d(channels)
     elif norm == 'ln':
         norm_ = nn.GroupNorm(1, channels)
     elif norm == 'gn':
-        norm_ = nn.GroupNorm(4, channels)
+        norm_ = nn.GroupNorm(2, channels)
     return norm_
 
 # dropout 
